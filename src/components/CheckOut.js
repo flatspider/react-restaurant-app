@@ -1,5 +1,5 @@
 function CheckOut() {
-  return <button className="btn btn-danger">This is a check out button</button>;
+  return <p>TIME TO PAY FOR FOOD</p>;
 }
 
 export default CheckOut;

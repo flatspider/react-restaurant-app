@@ -4,14 +4,25 @@ import DessertList from "./components/DessertList";
 import LunchList from "./components/LunchList";
 import CheckOut from "./components/CheckOut";
 
-const BASKET_ITEMS = [{}];
+// This will have items added to it when ADD button is pressed.
+
+// Have function here that is passed down to DessertItems and Lunch Items.
 
 function App() {
   // Establish what initial state is.
   // Should be lunch.
+  const [checkOut, setCheckOut] = useState("");
+
   const [menuSelection, setMenuSelection] = useState("a");
 
   // Have add menu item function here? That way you can switch back and forth?
+  /*
+  const addToCheckOut = (id) => {
+    const checkOutCopy = [...checkOutCopy];
+    checkOutCopy.push(thisMenuItem);
+    setCheckOut(checkOutCopy);
+  };
+  */
 
   // const addItem = () => add to ...menu, menu
 
@@ -40,12 +51,21 @@ function App() {
       </header>
       {menuSelection === "a" && <LunchList />}
       {menuSelection === "b" && <DessertList />}
-      <CheckOut />
+      {menuSelection === "c" && <CheckOut />}
+
       {/* Under the header, establish what form should be rendered. 
       {selection === "a" && <LunchList />}
       {selection === "b" && <DessertList />} Should the check out function be passed through to these two forms?
       <CheckOut checkOut={checkOut} /> 
       */}
+      <button
+        className="btn btn-danger"
+        onClick={() => {
+          setMenuSelection("c");
+        }}
+      >
+        Render Check Out
+      </button>
     </div>
   );
 }

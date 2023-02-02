@@ -7,11 +7,13 @@ const DESSERT_ITEMS = [
   { id: 3, description: "24 Karot Cake", price: "9" },
 ];
 
+const dessertHTML = DESSERT_ITEMS.map((item) => <MenuItem items={item} />);
+
 function DessertList() {
   return (
     <p>
       I am dessert menu
-      <MenuItem></MenuItem>
+      {dessertHTML}
     </p>
   );
 }
