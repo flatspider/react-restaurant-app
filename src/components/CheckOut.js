@@ -1,5 +1,10 @@
-function CheckOut() {
-  return <p>TIME TO PAY FOR FOOD</p>;
+function CheckOut({ checkOutItems }) {
+  return (
+    <div>
+      <p>TIME TO PAY FOR FOOD</p>
+      <h1>Your food: {checkOutItems}</h1>
+    </div>
+  );
 }
 
 export default CheckOut;

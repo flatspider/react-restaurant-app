@@ -4,14 +4,23 @@ import DessertList from "./components/DessertList";
 import LunchList from "./components/LunchList";
 import CheckOut from "./components/CheckOut";
 
+// May need to just list the menu list here.
+
+// Then change what it is populated with based on the button.
+
 // This will have items added to it when ADD button is pressed.
 
 // Have function here that is passed down to DessertItems and Lunch Items.
+// How do I pass an add item function to the menu Item?
+
+// From here -> DessertList -> MenuItem
+// Why do I need to pass it twice? The DessertList/LunchList are identically set up.
+// But I need the data to render differently based on what is happening.
 
 function App() {
   // Establish what initial state is.
   // Should be lunch.
-  const [checkOut, setCheckOut] = useState("");
+  const [checkOutItems, setCheckOutItems] = useState("");
 
   const [menuSelection, setMenuSelection] = useState("a");
 
@@ -19,12 +28,23 @@ function App() {
   /*
   const addToCheckOut = (id) => {
     const checkOutCopy = [...checkOutCopy];
-    checkOutCopy.push(thisMenuItem);
+    checkOutCopy.push(thisMenuItem); // Where does this come from? 
+    // Why not add whole item? Then just pass this list to CheckOut.js
     setCheckOut(checkOutCopy);
   };
   */
 
-  // const addItem = () => add to ...menu, menu
+  const addCheckOutItems = (items) => {
+    alert(items); // This returns a unique ID.
+    // Pass the id into the lunch or dessert menus and return the item.
+    // Add that item to your checkout.
+
+    /*
+    let checkOutCopy = [...checkOutItems]; // This should be adding to an array.
+    checkOutCopy = [...checkOutCopy, item];
+    setCheckOutItems(checkOutCopy);
+    */
+  };
 
   return (
     <div className="App container mt-5">
@@ -49,15 +69,14 @@ function App() {
           DESSERT
         </button>
       </header>
-      {menuSelection === "a" && <LunchList />}
-      {menuSelection === "b" && <DessertList />}
-      {menuSelection === "c" && <CheckOut />}
+      {menuSelection === "a" && (
+        <LunchList addCheckOutItems={addCheckOutItems} />
+      )}
+      {menuSelection === "b" && (
+        <DessertList addCheckOutItems={addCheckOutItems} />
+      )}
+      {menuSelection === "c" && <CheckOut checkOutItems={checkOutItems} />}
 
-      {/* Under the header, establish what form should be rendered. 
-      {selection === "a" && <LunchList />}
-      {selection === "b" && <DessertList />} Should the check out function be passed through to these two forms?
-      <CheckOut checkOut={checkOut} /> 
-      */}
       <button
         className="btn btn-danger"
         onClick={() => {
