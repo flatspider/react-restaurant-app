@@ -2,14 +2,14 @@
 // Then destructure it and print out the values.
 // {menu.description} and {menu.price} get printed.
 
-function MenuItem({ items, addCheckOutItems }) {
+function MenuItem({ items, placeCheckOutItemInCart }) {
   return (
     <div className="menu-item">
       <label>This should be a food description:{items.description} </label>
       <label>Food price:{items.price} </label>
       <button
         className="btn btn-primary check"
-        onClick={() => addCheckOutItems(items.id)}
+        onClick={() => placeCheckOutItemInCart(items.id)}
       >
         ADD TO CART
       </button>

@@ -40,18 +40,22 @@ const MENU_ITEMS = [
 // I do not want to add items to my LunchItems array.
 // I want to add them to a new check out array.
 // Look for a value to be passed in.
-function MenuForm({ addCheckOutItems, chooseMenu }) {
+function MenuForm({ placeCheckOutItemInCart, chooseMenu }) {
   const filteredArray = MENU_ITEMS.filter(
     (item) => item.category === chooseMenu
   );
 
   const lunchHTML = filteredArray.map((item) => (
-    <MenuItem items={item} addCheckOutItems={addCheckOutItems} key={item.id} />
+    <MenuItem
+      items={item}
+      placeCheckOutItemInCart={placeCheckOutItemInCart}
+      key={item.id}
+    />
   ));
 
   return (
     <div>
-      I am lunch menu
+      I am the menu
       {lunchHTML}
     </div>
   );

@@ -20,8 +20,9 @@ function App() {
   };
   */
 
-  const addCheckOutItems = (items) => {
+  const placeCheckOutItemInCart = (items) => {
     alert(items); // This returns a unique ID string.
+    // Where should the check out live? The state should be passed to CheckOut.
     const checkOutCopy = [...checkOutItems]; // This should be adding to an array.
     checkOutCopy.push(items);
     setCheckOutItems(checkOutCopy); // Not updating the state value.
@@ -52,10 +53,16 @@ function App() {
         </button>
       </header>
       {menuSelection === "a" && (
-        <MenuForm addCheckOutItems={addCheckOutItems} chooseMenu={"lunch"} />
+        <MenuForm
+          placeCheckOutItemInCart={placeCheckOutItemInCart}
+          chooseMenu={"lunch"}
+        />
       )}
       {menuSelection === "b" && (
-        <MenuForm addCheckOutItems={addCheckOutItems} chooseMenu={"dessert"} />
+        <MenuForm
+          placeCheckOutItemInCart={placeCheckOutItemInCart}
+          chooseMenu={"dessert"}
+        />
       )}
       {menuSelection === "c" && <CheckOut checkOutItems={checkOutItems} />}
 
