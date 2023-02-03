@@ -1,21 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import DessertList from "./components/DessertList";
-import LunchList from "./components/LunchList";
+import MenuForm from "./components/MenuForm";
 import CheckOut from "./components/CheckOut";
-
-// May need to just list the menu list here.
-
-// Then change what it is populated with based on the button.
-
-// This will have items added to it when ADD button is pressed.
-
-// Have function here that is passed down to DessertItems and Lunch Items.
-// How do I pass an add item function to the menu Item?
-
-// From here -> DessertList -> MenuItem
-// Why do I need to pass it twice? The DessertList/LunchList are identically set up.
-// But I need the data to render differently based on what is happening.
 
 function App() {
   // Establish what initial state is.
@@ -35,15 +21,11 @@ function App() {
   */
 
   const addCheckOutItems = (items) => {
-    alert(items); // This returns a unique ID.
-    // Pass the id into the lunch or dessert menus and return the item.
-    // Add that item to your checkout.
-
-    /*
-    let checkOutCopy = [...checkOutItems]; // This should be adding to an array.
-    checkOutCopy = [...checkOutCopy, item];
-    setCheckOutItems(checkOutCopy);
-    */
+    alert(items); // This returns a unique ID string.
+    const checkOutCopy = [...checkOutItems]; // This should be adding to an array.
+    checkOutCopy.push(items);
+    setCheckOutItems(checkOutCopy); // Not updating the state value.
+    console.log(checkOutItems);
   };
 
   return (
@@ -70,10 +52,10 @@ function App() {
         </button>
       </header>
       {menuSelection === "a" && (
-        <LunchList addCheckOutItems={addCheckOutItems} />
+        <MenuForm addCheckOutItems={addCheckOutItems} chooseMenu={"lunch"} />
       )}
       {menuSelection === "b" && (
-        <DessertList addCheckOutItems={addCheckOutItems} />
+        <MenuForm addCheckOutItems={addCheckOutItems} chooseMenu={"dessert"} />
       )}
       {menuSelection === "c" && <CheckOut checkOutItems={checkOutItems} />}
 

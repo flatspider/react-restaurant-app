@@ -1,3 +1,5 @@
+import MenuItem from "./MenuItem";
+
 function CheckOut({ checkOutItems }) {
   return (
     <div>
