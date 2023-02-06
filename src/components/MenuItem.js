@@ -5,11 +5,11 @@
 function MenuItem({ items, placeCheckOutItemInCart }) {
   return (
     <div className="menu-item">
-      <label>This should be a food description:{items.description} </label>
-      <label>Food price:{items.price} </label>
+      <label>Item:{items.description} </label>
+      <label>Price:{items.price} </label>
       <button
         className="btn btn-primary check"
-        onClick={() => placeCheckOutItemInCart(items.id)}
+        onClick={() => placeCheckOutItemInCart({ items })}
       >
         ADD TO CART
       </button>

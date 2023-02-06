@@ -1,5 +1,4 @@
 import MenuItem from "./MenuItem";
-import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const MENU_ITEMS = [
@@ -55,7 +54,7 @@ function MenuForm({ placeCheckOutItemInCart, chooseMenu }) {
 
   return (
     <div>
-      I am the menu
+      Menu
       {lunchHTML}
     </div>
   );
