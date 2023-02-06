@@ -34,6 +34,30 @@ const MENU_ITEMS = [
     category: "lunch",
   },
   { id: nanoid(), description: "Biscuit", price: "4", category: "lunch" },
+  {
+    id: nanoid(),
+    description: "Seared Salmon Salad",
+    price: "15.50",
+    category: "lunch",
+  },
+  {
+    id: nanoid(),
+    description: "Shrimp Louie Salad",
+    price: "15",
+    category: "lunch",
+  },
+  {
+    id: nanoid(),
+    description: "Mom's Spaghetti & Meat Sauce",
+    price: "15",
+    category: "lunch",
+  },
+  {
+    id: nanoid(),
+    description: "Shrimp & Grits",
+    price: "15.50",
+    category: "lunch",
+  },
 ];
 
 // I do not want to add items to my LunchItems array.

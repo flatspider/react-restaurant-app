@@ -41,7 +41,14 @@ function App() {
   return (
     <div className="App container mt-5">
       <header className="App-header">
-        <h1>BRICK STREET CAFE - Open 12 to 3</h1>
+        <div class="top-banner">
+          <img src="https://static.wixstatic.com/media/a895db_d25ab21086c64ec89c658622a8248f2e~mv2.jpg/v1/fill/w_402,h_478,al_c,lg_1,q_80,enc_auto/brickstreetcafelogo.jpg" />
+          <h1>
+            Kitchen is open for lunch Tuesday - Saturday from 11am - 4pm
+            ----------------------------- Cake Pick-Ups and Slices are available
+            Tuesday - Saturday from 10am - 6:30pm
+          </h1>
+        </div>
         <button
           className="btn btn-link"
           type="button"
@@ -49,7 +56,7 @@ function App() {
             setMenuSelection("a");
           }}
         >
-          LUNCH
+          Lunch Menu
         </button>
         <button
           className="btn btn-link"
@@ -58,7 +65,7 @@ function App() {
             setMenuSelection("b");
           }}
         >
-          DESSERT
+          Dessert Menu
         </button>
       </header>
       {menuSelection === "a" && (
@@ -81,7 +88,7 @@ function App() {
       )}
 
       <button
-        className="btn btn-danger"
+        className="btn btn-danger check-out-btn"
         onClick={() => {
           setMenuSelection("c");
         }}
