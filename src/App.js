@@ -10,19 +10,8 @@ function App() {
 
   const [menuSelection, setMenuSelection] = useState("a");
 
-  // Have add menu item function here? That way you can switch back and forth?
-  /*
-  const addToCheckOut = (id) => {
-    const checkOutCopy = [...checkOutCopy];
-    checkOutCopy.push(thisMenuItem); // Where does this come from? 
-    // Why not add whole item? Then just pass this list to CheckOut.js
-    setCheckOut(checkOutCopy);
-  };
-  */
-
   const placeCheckOutItemInCart = ({ items }) => {
-    alert(items); // This returns a unique ID string.
-    // Where should the check out live? The state should be passed to CheckOut.
+    alert(items.description + " added to your cart.");
     const checkOutCopy = [...checkOutItems]; // This should be adding to an array.
     checkOutCopy.push(items);
     setCheckOutItems(checkOutCopy); // Not updating the state value.
@@ -30,10 +19,16 @@ function App() {
   };
 
   const removeItemFromCart = ({ items }) => {
-    alert(items); // This returns a unique ID string.
+    alert(items.description); // This returns a unique ID string.
     // Where should the check out live? The state should be passed to CheckOut.
     const checkOutCopy1 = [...checkOutItems]; // This should be adding to an array.
-    checkOutCopy1.splice(0, 1);
+    // What does the button know? It can view the object it is attached to.
+    // I want the button to splice out the array index it is currently at.
+    let deleteIndex = checkOutCopy1.findIndex(
+      (item) => item.description === items.description
+    );
+    console.log(deleteIndex);
+    checkOutCopy1.splice(deleteIndex, 1);
     setCheckOutItems(checkOutCopy1); // Not updating the state value.
     console.log(checkOutItems); // ID values are being added to state. I want the entire item added.
   };
