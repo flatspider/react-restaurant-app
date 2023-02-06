@@ -2,7 +2,13 @@
 // Then destructure it and print out the values.
 // {menu.description} and {menu.price} get printed.
 
-function MenuItem({ items, placeCheckOutItemInCart }) {
+function MenuItem({ items, placeCheckOutItemInCart, removeButton }) {
+  if (removeButton) {
+    // if remove button is true, render remove from list
+  } else {
+    // render the add to check out button
+  }
+
   return (
     <tr>
       <td>{items.description}</td>

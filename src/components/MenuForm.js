@@ -44,9 +44,12 @@ function MenuForm({ placeCheckOutItemInCart, chooseMenu }) {
     (item) => item.category === chooseMenu
   );
 
+  // Above function filters the full menu-items array according to the item.category that was selected.
+
   const lunchHTML = filteredArray.map((item) => (
     <MenuItem
       items={item}
+      removeButton={false}
       placeCheckOutItemInCart={placeCheckOutItemInCart}
       key={item.id}
     />

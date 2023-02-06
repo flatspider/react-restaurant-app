@@ -3,15 +3,16 @@ import MenuItem from "./MenuItem";
 function CheckOut({ checkOutItems }) {
   // Check out items is an array of objects.
 
+  let subtotalHTML = 5; // add all of the prices listed in the cart.
+
   let checkOutHTML = <p>Hello</p>;
 
-  if (checkOutItems == null) {
-    checkOutHTML = <p>NOTHING HERE</p>;
+  if (checkOutItems == []) {
+    checkOutHTML = <p>There is nothing currently in your cart.</p>;
   } else {
     checkOutHTML = checkOutItems.map((item) => (
       <div>
-        <MenuItem items={item} key={item.id} />
-        <button>Remove Item</button>
+        <MenuItem items={item} key={item.id} removeButton={true} />
       </div>
     ));
   }
@@ -19,8 +20,8 @@ function CheckOut({ checkOutItems }) {
   return (
     <div>
       <p>TIME TO PAY FOR FOOD</p>
-      <h1>Your food: </h1>
-      <h2>{checkOutHTML}</h2>
+      {checkOutHTML}
+      <h3>Your current subtotal is:{subtotalHTML}</h3>
     </div>
   );
 }
