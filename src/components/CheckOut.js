@@ -3,13 +3,16 @@ import MenuItem from "./MenuItem";
 function CheckOut({ checkOutItems }) {
   // Check out items is an array of objects.
 
-  const checkOutHTML = <p>Hello</p>;
+  let checkOutHTML = <p>Hello</p>;
 
   if (checkOutItems == null) {
     checkOutHTML = <p>NOTHING HERE</p>;
   } else {
     checkOutHTML = checkOutItems.map((item) => (
-      <MenuItem items={item} key={item.id} />
+      <div>
+        <MenuItem items={item} key={item.id} />
+        <button>Remove Item</button>
+      </div>
     ));
   }
 
