@@ -29,6 +29,15 @@ function App() {
     console.log(checkOutItems); // ID values are being added to state. I want the entire item added.
   };
 
+  const removeItemFromCart = ({ items }) => {
+    alert(items); // This returns a unique ID string.
+    // Where should the check out live? The state should be passed to CheckOut.
+    const checkOutCopy1 = [...checkOutItems]; // This should be adding to an array.
+    checkOutCopy1.splice(0, 1);
+    setCheckOutItems(checkOutCopy1); // Not updating the state value.
+    console.log(checkOutItems); // ID values are being added to state. I want the entire item added.
+  };
+
   return (
     <div className="App container mt-5">
       <header className="App-header">
@@ -64,7 +73,12 @@ function App() {
           chooseMenu={"dessert"}
         />
       )}
-      {menuSelection === "c" && <CheckOut checkOutItems={checkOutItems} />}
+      {menuSelection === "c" && (
+        <CheckOut
+          checkOutItems={checkOutItems}
+          removeItemFromCart={removeItemFromCart}
+        />
+      )}
 
       <button
         className="btn btn-danger"
@@ -72,7 +86,7 @@ function App() {
           setMenuSelection("c");
         }}
       >
-        Render Check Out
+        Check Out
       </button>
     </div>
   );

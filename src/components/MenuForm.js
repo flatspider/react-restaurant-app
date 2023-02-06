@@ -39,7 +39,7 @@ const MENU_ITEMS = [
 // I do not want to add items to my LunchItems array.
 // I want to add them to a new check out array.
 // Look for a value to be passed in.
-function MenuForm({ placeCheckOutItemInCart, chooseMenu }) {
+function MenuForm({ placeCheckOutItemInCart, chooseMenu, removeItemFromCart }) {
   const filteredArray = MENU_ITEMS.filter(
     (item) => item.category === chooseMenu
   );
@@ -52,6 +52,7 @@ function MenuForm({ placeCheckOutItemInCart, chooseMenu }) {
       removeButton={false}
       placeCheckOutItemInCart={placeCheckOutItemInCart}
       key={item.id}
+      removeItemFromCart={removeItemFromCart}
     />
   ));
 

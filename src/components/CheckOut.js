@@ -1,6 +1,6 @@
 import MenuItem from "./MenuItem";
 
-function CheckOut({ checkOutItems }) {
+function CheckOut({ checkOutItems, removeItemFromCart }) {
   // Check out items is an array of objects.
 
   let subtotalHTML = 5; // add all of the prices listed in the cart.
@@ -12,7 +12,12 @@ function CheckOut({ checkOutItems }) {
   } else {
     checkOutHTML = checkOutItems.map((item) => (
       <div>
-        <MenuItem items={item} key={item.id} removeButton={true} />
+        <MenuItem
+          items={item}
+          key={item.id}
+          removeButton={true}
+          removeItemFromCart={removeItemFromCart}
+        />
       </div>
     ));
   }
