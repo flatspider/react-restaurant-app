@@ -32,10 +32,53 @@ function App() {
       <header className="App-header">
         <div className="top-banner">
           <img src="https://static.wixstatic.com/media/a895db_d25ab21086c64ec89c658622a8248f2e~mv2.jpg/v1/fill/w_402,h_478,al_c,lg_1,q_80,enc_auto/brickstreetcafelogo.jpg" />
-          <h1>
-            Kitchen is open for lunch Tuesday - Saturday from 11am - 4pm
-            ----------------------------- Cake Pick-Ups and Slices are available
-            Tuesday - Saturday from 10am - 6:30pm
+          <h1 className="align-text-center">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Lunch</th>
+                  <th scope="col">Cake Pick-Up</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Monday</th>
+                  <td>Closed</td>
+                  <td>Closed</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tuesday</th>
+                  <td>11am - 4pm</td>
+                  <td>10am - 6:30pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Wednesday</th>
+                  <td>11am - 4pm</td>
+                  <td>10am - 6:30pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thursday</th>
+                  <td>11am - 4pm</td>
+                  <td>10am - 6:30pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Friday</th>
+                  <td>11am - 4pm</td>
+                  <td>10am - 6:30pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Saturday</th>
+                  <td>11am - 4pm</td>
+                  <td>10am - 6:30pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sunday</th>
+                  <td>Closed</td>
+                  <td>Closed</td>
+                </tr>
+              </tbody>
+            </table>
           </h1>
         </div>
         <button

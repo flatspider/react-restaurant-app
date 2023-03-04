@@ -83,11 +83,13 @@ function MenuForm({ placeCheckOutItemInCart, chooseMenu, removeItemFromCart }) {
   return (
     <div>
       <table>
-        <tr>
-          <th>Description</th>
-          <th>Price</th>
-        </tr>
-        {lunchHTML}
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>{lunchHTML}</tbody>
       </table>
     </div>
   );
