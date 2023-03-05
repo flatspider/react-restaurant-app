@@ -81,7 +81,7 @@ function MenuForm({ placeCheckOutItemInCart, chooseMenu, removeItemFromCart }) {
   ));
 
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center">
       <table>
         <thead>
           <tr>
