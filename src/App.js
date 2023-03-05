@@ -12,7 +12,7 @@ function App() {
     const checkOutCopy = [...checkOutItems]; // This should be adding to an array.
     checkOutCopy.push(items);
     setCheckOutItems(checkOutCopy); // Not updating the state value.
-    console.log(checkOutItems); // ID values are being added to state. I want the entire item added.
+    //console.log(checkOutItems); // ID values are being added to state. I want the entire item added.
   };
 
   const removeItemFromCart = ({ items }) => {

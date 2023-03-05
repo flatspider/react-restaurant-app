@@ -7,10 +7,15 @@ function MenuItem({
   placeCheckOutItemInCart,
   removeButton,
   removeItemFromCart,
+  checkOut,
 }) {
   let itemContent = "";
 
-  if (removeButton) {
+  if (checkOut) {
+    itemContent = <h1>✔</h1>;
+  }
+
+  if (removeButton && !checkOut) {
     // if remove button is true, render remove from list
     itemContent = (
       <button
@@ -20,7 +25,7 @@ function MenuItem({
         Remove from cart
       </button>
     );
-  } else {
+  } else if (!checkOut) {
     // render the add to check out button
     itemContent = (
       <button
